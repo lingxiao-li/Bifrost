@@ -2,12 +2,12 @@
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv%20paper-2410.19079-b31b1b)](https://arxiv.org/abs/2410.19079)&nbsp;
-[![project page](https://img.shields.io/badge/Project%20page-SAR-pink)](https://lingxiao-li.github.io/bifrost.github.io/)&nbsp;
+[![project page](https://img.shields.io/badge/Project%20page-Bifrost-pink)](https://lingxiao-li.github.io/bifrost.github.io/)&nbsp;
 
 </div>
 
 <p align="center">
-  <img src="assets/visualization.png" width="720">
+  <img src="assets/Figure_1.png" width="720">
 </p>
 
 This repository includes the official pytorch implementation of BIFRÖST, presented in our paper:
