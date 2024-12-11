@@ -12,7 +12,7 @@
 
 This repository includes the official pytorch implementation of BIFRÖST, presented in our paper:
 
-**[BIFRÖST: 3D-Aware Image compositing with Language Instructions](https://arxiv.org/abs/)**
+**[BIFRÖST: 3D-Aware Image compositing with Language Instructions](https://arxiv.org/abs/2410.19079)**
 
 [Lingxiao Li](https://lingxiao-li.github.io/), [Kaixiong Gong](https://kxgong.github.io/), [Weihong Li](https://weihonglee.github.io/), [Xili Dai](https://delay-xili.github.io), [Tao Chen](https://eetchen.github.io/), [Xiaojun Yuan](https://yuan-xiaojun.github.io),[Xiangyu Yue](https://xyue.io/)
 
