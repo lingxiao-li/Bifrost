@@ -1,0 +1,1 @@
+python tool_add_control_anydoor.py /data2/mhf/DXL/Lingxiao/Cache/model_weight/anydoor/epoch=1-step=8687.ckpt /data2/mhf/DXL/Lingxiao/Cache/model_weight/anydoor/bifrost_ini.ckpt
