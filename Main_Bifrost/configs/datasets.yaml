@@ -1,0 +1,80 @@
+Train:
+  YoutubeVOS: # ok depth done
+    image_dir: PATH_TO/datasets/YTBVOS/train/JPEGImages/
+    anno: PATH_TO/datasets/YTBVOS/train/Annotations
+    meta: PATH_TO/datasets/YTBVOS/train/meta.json
+
+  YoutubeVIS:
+    image_dir: PATH_TO/datasets/youtubevis/train/JPEGImages/
+    anno: PATH_TO/datasets/youtubevis/train/Annotations/
+    meta: PATH_TO/datasets/youtubevis/train/meta.json
+
+  VIPSeg: # ok depth done
+    image_dir: PATH_TO/datasets/VIPSeg/VIPSeg_720P/images/
+    anno: PATH_TO/datasets/VIPSeg/VIPSeg_720P/panomasks/
+
+  UVO:
+    train:
+      image_dir: PATH_TO/datasets/UVO/uvo_frames_sparse
+      video_json: PATH_TO/datasets/UVO/UVO_sparse_train_video_with_interpolation.json
+      image_json: PATH_TO/datasets/UVO/UVO_sparse_train_video_with_interpolation_reorg.json
+    val:
+      image_dir: PATH_TO/datasets/UVO/uvo_frames_sparse
+      video_json: PATH_TO/datasets/UVO/VideoSparseSet/UVO_sparse_val_video_with_interpolation.json
+      image_json: PATH_TO/datasets/UVO/VideoSparseSet/UVO_sparse_val_video_interpolation_reorg.json
+
+  Mose: # ok depth done
+    image_dir: PATH_TO/datasets/MOSE/train/JPEGImages/
+    anno: PATH_TO/datasets/MOSE/train/Annotations/
+
+  MVImageNet: 
+    txt: ./datasets/Preprocess/mvimagenet.txt
+    image_dir: /mnt/workspace/xizhi/data/MVImgNet/
+
+  VitonHD: # ok depth done
+    image_dir: PATH_TO/datasets/TryOn/VitonHD/train/cloth/
+
+  Dresscode:
+    image_dir: PATH_TO/datasets/dresscode/DressCode/upper_body/label_maps/
+
+  FashionTryon:
+    image_dir: PATH_TO/datasets/TryOn/FashionTryOn/train
+
+  Lvis: # ok depth done
+    image_dir: PATH_TO/datasets/COCO_dataset_2017/train2017
+    json_path: PATH_TO/datasets/lvis_v1/lvis_v1_train.json
+
+  SAM: # ok depth done
+    sub1: PATH_TO/datasets/SAM/0000
+    sub2: PATH_TO/datasets/SAM/0001
+    sub3: PATH_TO/datasets/SAM/0002
+    sub4: PATH_TO/datasets/SAM/0003
+    sub5: PATH_TO/datasets/SAM/0004
+    sub6: PATH_TO/datasets/SAM/0005
+    sub7: PATH_TO/datasets/SAM/0006
+    sub8: PATH_TO/datasets/SAM/0007
+    sub9: PATH_TO/datasets/SAM/0008
+    sub10: PATH_TO/datasets/SAM/0009
+    sub11: PATH_TO/datasets/SAM/0010
+    sub12: PATH_TO/datasets/SAM/0011
+    sub13: PATH_TO/datasets/SAM/0012
+    sub14: PATH_TO/datasets/SAM/0013
+    sub15: PATH_TO/datasets/SAM/0014
+    sub16: PATH_TO/datasets/SAM/0015
+  
+  Saliency:  # ok depth done
+    MSRA_root: PATH_TO/datasets/Saliency/MSRA10K_Imgs_GT/
+    TR_root: PATH_TO/datasets/Saliency/DUTS-TR/DUTS-TR-Image/
+    TE_root: PATH_TO/datasets/Saliency/DUTS-TE/DUTS-TE-Image/
+    HFlickr_root: PATH_TO/datasets/Saliency/HFlickr/masks/
+
+Test:
+  DreamBooth:
+    fg_dir: PATH_TO/datasets/DreamBooth/AnyDoor_DreamBooth
+    bg_dir: PATH_TO/datasets/DreamBooth/v1_800
+
+  VitonHDTest:
+    image_dir: PATH_TO/datasets/TryOn/VitonHD/test/cloth
+
+
+

@@ -1,0 +1,3 @@
+pretrained_model: PATH_TO/checkpoints/5-9/model-epoch=5-step=19999.ckpt
+config_file: configs/bifrost.yaml
+save_memory: False
