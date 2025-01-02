@@ -65,15 +65,6 @@ We also support train from the checkpoint of [AnyDoor](https://github.com/ali-vi
 
 
 ## Inference
-### Inference Bifrost Image Compositing
-The code is provided in the folder Main_Bifrost
-We provide inference code in `run_inference.py` (from Line 370 - ) for both inference of a single image and inference of a dataset (DreamBooth Test). You should modify the data path and run the following code. 
-The generated results are provided in the path you set.
-
-```bash
-sh scripts/inference.sh
-```
-
 ### Inference Bifrost MLLM
 The code is provided in the folder LLaVA_Bifrost
 First place the downloaded checkpoint folder in LLaVA_Bifrost/llava/checkpoints
@@ -83,6 +74,17 @@ The generated results are provided in the path you set.
 ```bash
 python llava/eva/run_llava.py
 ```
+where the outputs of MLLM can be used as part of the input of image compositing model
+
+### Inference Bifrost Image Compositing
+The code is provided in the folder Main_Bifrost
+We provide inference code in `run_inference.py` (from Line 370 - ) for both inference of a single image and inference of a dataset (DreamBooth Test). You should modify the data path and run the following code. 
+Replace the location of the bounding box and the value of depth with the value from the MLLM in the first stage. The generated results are provided in the path you set.
+
+```bash
+sh scripts/inference.sh
+```
+
 
 ## Train
 
@@ -153,4 +155,4 @@ The code is built upon [ControlNet](https://github.com/lllyasviel/ControlNet), [
   year={2024}
 }
 ```
-You can contact me via email lxili@ie.cuhk.edu.hk if any questions.
+You can contact me via email lingxiaoli98@gmail.com if any questions.
