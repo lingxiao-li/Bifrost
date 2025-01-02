@@ -18,8 +18,6 @@ This repository includes the official pytorch implementation of BIFRÖST, presen
 
 MMLab, CUHK & HKUST (GZ) & Fudan University & UESTC
 
-Currently, we are working to organize the code.
-
 ## Update
 
 - [2025.1] Code and weights are released!
