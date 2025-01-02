@@ -1,5 +1,5 @@
 Train:
-  YoutubeVOS: # ok depth done
+  YoutubeVOS:
     image_dir: PATH_TO/datasets/YTBVOS/train/JPEGImages/
     anno: PATH_TO/datasets/YTBVOS/train/Annotations
     meta: PATH_TO/datasets/YTBVOS/train/meta.json
@@ -9,7 +9,7 @@ Train:
     anno: PATH_TO/datasets/youtubevis/train/Annotations/
     meta: PATH_TO/datasets/youtubevis/train/meta.json
 
-  VIPSeg: # ok depth done
+  VIPSeg:
     image_dir: PATH_TO/datasets/VIPSeg/VIPSeg_720P/images/
     anno: PATH_TO/datasets/VIPSeg/VIPSeg_720P/panomasks/
 
@@ -23,7 +23,7 @@ Train:
       video_json: PATH_TO/datasets/UVO/VideoSparseSet/UVO_sparse_val_video_with_interpolation.json
       image_json: PATH_TO/datasets/UVO/VideoSparseSet/UVO_sparse_val_video_interpolation_reorg.json
 
-  Mose: # ok depth done
+  Mose:
     image_dir: PATH_TO/datasets/MOSE/train/JPEGImages/
     anno: PATH_TO/datasets/MOSE/train/Annotations/
 
@@ -31,7 +31,7 @@ Train:
     txt: ./datasets/Preprocess/mvimagenet.txt
     image_dir: /mnt/workspace/xizhi/data/MVImgNet/
 
-  VitonHD: # ok depth done
+  VitonHD:
     image_dir: PATH_TO/datasets/TryOn/VitonHD/train/cloth/
 
   Dresscode:
@@ -40,11 +40,11 @@ Train:
   FashionTryon:
     image_dir: PATH_TO/datasets/TryOn/FashionTryOn/train
 
-  Lvis: # ok depth done
+  Lvis:
     image_dir: PATH_TO/datasets/COCO_dataset_2017/train2017
     json_path: PATH_TO/datasets/lvis_v1/lvis_v1_train.json
 
-  SAM: # ok depth done
+  SAM:
     sub1: PATH_TO/datasets/SAM/0000
     sub2: PATH_TO/datasets/SAM/0001
     sub3: PATH_TO/datasets/SAM/0002
@@ -62,7 +62,7 @@ Train:
     sub15: PATH_TO/datasets/SAM/0014
     sub16: PATH_TO/datasets/SAM/0015
   
-  Saliency:  # ok depth done
+  Saliency:
     MSRA_root: PATH_TO/datasets/Saliency/MSRA10K_Imgs_GT/
     TR_root: PATH_TO/datasets/Saliency/DUTS-TR/DUTS-TR-Image/
     TE_root: PATH_TO/datasets/Saliency/DUTS-TE/DUTS-TE-Image/
