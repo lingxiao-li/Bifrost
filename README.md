@@ -52,7 +52,7 @@ pip install lvis
 ```
 ## Download Checkpoints
 Download Bifrost checkpoint: 
-* [BaiduNetDisk](https://pan.baidu.com/s/1_nHmskl3z5TfcuwEzBRVBA?pwd=czhc)
+* URL: [BaiduNetDisk](https://pan.baidu.com/s/1_nHmskl3z5TfcuwEzBRVBA?pwd=czhc)
 
 Download DINOv2 checkpoint and revise `/configs/anydoor.yaml` for the path (line 103)
 * URL: https://github.com/facebookresearch/dinov2?tab=readme-ov-file
