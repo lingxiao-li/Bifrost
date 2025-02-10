@@ -3,6 +3,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv%20paper-2410.19079-b31b1b)](https://arxiv.org/abs/2410.19079)&nbsp;
 [![project page](https://img.shields.io/badge/Project%20page-Bifrost-pink)](https://lingxiao-li.github.io/bifrost.github.io/)&nbsp;
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-yellow.svg)](https://huggingface.co/lingxiao2049/Bifrost)&nbsp;
 [![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)&nbsp;
 
 
