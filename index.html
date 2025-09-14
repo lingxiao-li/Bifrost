@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIFRÖST: 3D-Aware Image Compositing with Language Instructions</title>
+    <meta name="description" content="A novel 3D-aware framework built upon diffusion models to perform instruction-based image composition">
+    <meta name="keywords" content="3D-aware, image compositing, diffusion models, language instructions, computer vision, deep learning">
+    <meta name="author" content="Lingxiao Li, Kaixiong Gong, Weihong Li, Xili Dai, Tao Chen, Xiaojun Yuan, Xiangyu Yue">
+    
+    <!-- Open Graph / Social Media tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BIFRÖST: 3D-Aware Image Compositing with Language Instructions">
+    <meta property="og:description" content="A novel 3D-aware framework built upon diffusion models to perform instruction-based image composition">
+    <meta property="og:image" content="assets/Figure_1.png">
+    <meta property="og:url" content="https://lingxiao-li.github.io/Bifrost/">
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BIFRÖST: 3D-Aware Image Compositing with Language Instructions">
+    <meta name="twitter:description" content="A novel 3D-aware framework built upon diffusion models to perform instruction-based image composition">
+    <meta name="twitter:image" content="assets/Figure_1.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌉</text></svg>">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span class="logo-icon">🌉</span>
+                    <span class="logo-text">BIFRÖST</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#abstract">Abstract</a></li>
+                    <li><a href="#method">Method</a></li>
+                    <li><a href="#results">Results</a></li>
+                    <li><a href="#code">Code</a></li>
+                    <li><a href="#citation">Citation</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    BIFRÖST: 3D-Aware Image Compositing with Language Instructions
+                </h1>
+                
+                <div class="authors">
+                    <span class="author"><a href="https://lingxiao-li.github.io/">Lingxiao Li</a><sup>1,2</sup></span>
+                    <span class="author"><a href="https://kxgong.github.io/">Kaixiong Gong</a><sup>1</sup></span>
+                    <span class="author"><a href="https://weihonglee.github.io/">Weihong Li</a><sup>3</sup></span>
+                    <span class="author"><a href="https://delay-xili.github.io">Xili Dai</a><sup>4</sup></span>
+                    <span class="author"><a href="https://eetchen.github.io/">Tao Chen</a><sup>1</sup></span>
+                    <span class="author"><a href="https://yuan-xiaojun.github.io">Xiaojun Yuan</a><sup>2</sup></span>
+                    <span class="author"><a href="https://xyue.io/">Xiangyu Yue</a><sup>1</sup></span>
+                </div>
+                
+                <div class="affiliations">
+                    <div class="affiliation"><sup>1</sup>MMLab, CUHK</div>
+                    <div class="affiliation"><sup>2</sup>HKUST (GZ)</div>
+                    <div class="affiliation"><sup>3</sup>Fudan University</div>
+                    <div class="affiliation"><sup>4</sup>UESTC</div>
+                </div>
+                
+                <div class="hero-badges">
+                    <a href="https://arxiv.org/abs/2410.19079" class="badge badge-paper">
+                        📄 Paper (arXiv)
+                    </a>
+                    <a href="https://github.com/lingxiao-li/Bifrost" class="badge badge-code">
+                        💻 Code
+                    </a>
+                    <a href="https://huggingface.co/lingxiao2049/Bifrost" class="badge badge-model">
+                        🤗 Models
+                    </a>
+                </div>
+                
+                <div class="hero-figure">
+                    <img src="assets/Figure_1.png" alt="BIFRÖST Overview" class="hero-image">
+                    <p class="hero-caption">
+                        BIFRÖST performs 3D-aware image compositing with language instructions, 
+                        handling complex spatial relationships like occlusion and depth blur.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="section">
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+            <div class="abstract-content">
+                <p>
+                    This paper introduces <strong>Bifröst</strong>, a novel 3D-aware framework that is built upon diffusion models 
+                    to perform instruction-based image composition. Previous methods concentrate on image compositing at the 2D level, 
+                    which fall short in handling complex spatial relationships (<em>e.g.</em>, occlusion). 
+                    <em>Bifröst</em> addresses these issues by training MLLM as a 2.5D location predictor and integrating depth maps 
+                    as an extra condition during the generation process to bridge the gap between 2D and 3D, which enhances spatial 
+                    comprehension and supports sophisticated spatial interactions.
+                </p>
+                
+                <p>
+                    Our method begins by fine-tuning MLLM with a custom counterfactual dataset to predict 2.5D object locations in 
+                    complex backgrounds from language instructions. Then, the image-compositing model is uniquely designed to process 
+                    multiple types of input features, enabling it to perform high-fidelity image compositions that consider occlusion, 
+                    depth blur, and image harmonization. Extensive qualitative and quantitative evaluations demonstrate that 
+                    <em>Bifröst</em> significantly outperforms existing methods, providing a robust solution for generating 
+                    realistically composited images in scenarios demanding intricate spatial understanding.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="method" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Method</h2>
+            
+            <div class="method-pipeline">
+                <img src="assets/inference_pipeline.png" alt="Method Pipeline" class="pipeline-image">
+                <p class="pipeline-caption">
+                    BIFRÖST pipeline: (1) MLLM predicts 2.5D locations from language instructions, 
+                    (2) Image compositing model generates realistic compositions considering 3D spatial relationships.
+                </p>
+            </div>
+            
+            <div class="method-details">
+                <div class="method-step">
+                    <h3>🎯 2.5D Location Prediction</h3>
+                    <p>
+                        We fine-tune a Multi-modal Large Language Model (MLLM) with a custom counterfactual dataset 
+                        to predict accurate 2.5D object locations from natural language instructions.
+                    </p>
+                </div>
+                
+                <div class="method-step">
+                    <h3>🎨 3D-Aware Image Compositing</h3>
+                    <p>
+                        Our compositing model processes multiple input features including depth maps, enabling 
+                        high-fidelity image generation that handles occlusion, depth blur, and harmonization.
+                    </p>
+                </div>
+                
+                <div class="method-step">
+                    <h3>🧠 Spatial Understanding</h3>
+                    <p>
+                        By bridging 2D and 3D representations, BIFRÖST achieves superior spatial comprehension 
+                        and supports sophisticated spatial interactions in complex scenes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section">
+        <div class="container">
+            <h2 class="section-title">Results</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <img src="assets/Comparison.png" alt="Comparison Results" class="result-image">
+                    <h3>Quantitative Comparison</h3>
+                    <p>BIFRÖST significantly outperforms existing methods across multiple evaluation metrics.</p>
+                </div>
+                
+                <div class="result-item">
+                    <img src="assets/applications.png" alt="Applications" class="result-image">
+                    <h3>Diverse Applications</h3>
+                    <p>Our method enables various creative applications with realistic 3D-aware compositions.</p>
+                </div>
+                
+                <div class="result-item">
+                    <img src="assets/ablation_components.png" alt="Ablation Study" class="result-image">
+                    <h3>Ablation Analysis</h3>
+                    <p>Comprehensive ablation studies validate the importance of each component in our framework.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code & Models Section -->
+    <section id="code" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Code & Models</h2>
+            
+            <div class="code-grid">
+                <div class="code-card">
+                    <div class="code-header">
+                        <h3>🚀 Quick Start</h3>
+                    </div>
+                    <div class="code-content">
+                        <pre><code># Clone the repository
+git clone https://github.com/lingxiao-li/Bifrost.git
+cd Bifrost
+
+# Install dependencies
+conda env create -f environment.yaml
+conda activate bifrost
+
+# Download pre-trained models
+# See README.md for detailed instructions</code></pre>
+                    </div>
+                </div>
+                
+                <div class="code-card">
+                    <div class="code-header">
+                        <h3>📦 Pre-trained Models</h3>
+                    </div>
+                    <div class="code-content">
+                        <div class="model-links">
+                            <a href="https://huggingface.co/lingxiao2049/Bifrost" class="model-link">
+                                <span class="model-icon">🤗</span>
+                                <div>
+                                    <strong>HuggingFace Models</strong>
+                                    <p>Complete model collection</p>
+                                </div>
+                            </a>
+                            <a href="#" class="model-link">
+                                <span class="model-icon">☁️</span>
+                                <div>
+                                    <strong>BaiduNetDisk</strong>
+                                    <p>Alternative download source</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-card">
+                    <div class="code-header">
+                        <h3>🔬 Inference</h3>
+                    </div>
+                    <div class="code-content">
+                        <pre><code># Run MLLM for location prediction
+python llava/eva/run_llava.py
+
+# Run image compositing
+sh scripts/inference.sh</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="section">
+        <div class="container">
+            <h2 class="section-title">Citation</h2>
+            
+            <div class="citation-card">
+                <h3>📋 BibTeX</h3>
+                <div class="citation-content">
+                    <pre><code>@INPROCEEDINGS{Li24,
+  title = {BIFRÖST: 3D-Aware Image compositing with Language Instructions},
+  author = {Lingxiao Li and Kaixiong Gong and Weihong Li and Xili Dai and Tao Chen and Xiaojun Yuan and Xiangyu Yue},
+  booktitle={Advanced Neural Information Processing System (NeurIPS)},
+  year={2024}
+}</code></pre>
+                </div>
+                <button class="copy-btn" onclick="copyToClipboard('.citation-content code')">
+                    📋 Copy Citation
+                </button>
+            </div>
+            
+            <div class="acknowledgments">
+                <h3>🙏 Acknowledgments</h3>
+                <p>
+                    The code is built upon <a href="https://github.com/lllyasviel/ControlNet">ControlNet</a> and 
+                    <a href="https://github.com/ali-vilab/AnyDoor">AnyDoor</a>. 
+                    Thank you for their great work.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2024 BIFRÖST Project. All rights reserved.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="https://github.com/lingxiao-li/Bifrost" class="footer-link">GitHub</a>
+                    <a href="https://arxiv.org/abs/2410.19079" class="footer-link">arXiv</a>
+                    <a href="mailto:lingxiaoli98@gmail.com" class="footer-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

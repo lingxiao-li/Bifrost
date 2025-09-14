@@ -1,0 +1,47 @@
+# GitHub Pages configuration for BIFRÖST project
+title: "BIFRÖST: 3D-Aware Image Compositing with Language Instructions"
+description: "A novel 3D-aware framework built upon diffusion models to perform instruction-based image composition"
+author: "Lingxiao Li, et al."
+url: "https://lingxiao-li.github.io"
+baseurl: "/Bifrost"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO settings
+lang: en_US
+google_analytics: 
+twitter:
+  username: 
+  card: summary_large_image
+
+# Social links
+social:
+  name: BIFRÖST Project
+  links:
+    - https://github.com/lingxiao-li/Bifrost
+    - https://arxiv.org/abs/2410.19079
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LLaVA_Bifrost/
+  - Main_Bifrost/
+  - .git/
+  - .gitignore
+  - environment.yaml
+  - requirements.txt
+  - scripts/
+  - configs/
+
+# Include files
+include:
+  - assets/
