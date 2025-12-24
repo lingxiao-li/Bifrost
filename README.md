@@ -58,7 +58,7 @@ Download Bifrost checkpoint:
 * URL: [BaiduNetDisk](https://pan.baidu.com/s/1_nHmskl3z5TfcuwEzBRVBA?pwd=czhc)
 * URL: [HuggingFace](https://huggingface.co/lingxiao2049/Bifrost)
 
-Download DINOv2 checkpoint and revise `/configs/anydoor.yaml` for the path (line 103)
+Download DINOv2 checkpoint and revise `/configs/bifrost.yaml` for the path (line 103)
 * URL: https://github.com/facebookresearch/dinov2?tab=readme-ov-file
 
 Download Stable Diffusion V2.1 if you want to train from scratch.
